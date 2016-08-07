@@ -55,6 +55,7 @@
     <None Include="Defines\PropertyList.cs" />
     <None Include="Defines\Stylelist.cs" />
     <None Include="Defines\Utils.cs" />
+    <Compile Include="Defines\InlineImage.cs" />
     <Compile Include="HtmlHighlightTextBlock.cs" />
     <Compile Include="HtmlTextBlock.cs" />
     <Compile Include="Parse\HtmlParser.cs" />

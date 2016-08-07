@@ -83,6 +83,34 @@ namespace HtmlTextBlock
                 case "br":
                     retVal = new LineBreak();
                     break;
+                case "img":
+                    InlineImage img = new InlineImage();
+                    if (aTag.Contains("source"))
+                    {
+                        img.ImageSource = aTag["source"];
+
+                        double internal_width = 0.0;
+
+                        if (aTag.Contains("width") && double.TryParse(aTag["width"], out internal_width))
+                            img.Width = internal_width;
+
+                        double internal_height = 0.0;
+
+                        if (aTag.Contains("height") && double.TryParse(aTag["height"], out internal_height))
+                            img.Width = internal_height;
+
+
+                        img.LoadImage();
+                        if (aTag.Contains("href"))
+                        {
+                            img.IsHyperlink = true;
+                            img.HyperlinkAddress = aTag["href"];
+                        }
+                        return img.BuildInlineContext();
+                    }
+                    else return new Run();
+                    break;
+
                 default:
                     Debug.WriteLine("UpdateElement - " + aTag.Name + " not handled.");
                     retVal = new Run();

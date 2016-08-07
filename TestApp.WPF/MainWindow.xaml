@@ -8,9 +8,9 @@
                                      Html="{Binding Text, ElementName=tb}"
                                      DockPanel.Dock="Top"
                                      />
-        <TextBlock Text="[b] [i] [u] [a href=xx] [br] supported." DockPanel.Dock="Bottom" />
+        <TextBlock Text="[b] [i] [u] [a href=xx] [br] [img source=xx width=xx height=xx] supported." DockPanel.Dock="Bottom" />
         <TextBox TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"
-            x:Name="tb" Text="The [i][u]quick brown fox[/i][/u] jumps over the [b]lazy dog[/b]" />
+            x:Name="tb" Text="The [i][u]quick brown fox[/i][/u] jumps over the [b]lazy dog[/b] [img source='https://www.diffnow.com/images/diffnow.png' width=40 height=50]" />
     </DockPanel>
 
 
